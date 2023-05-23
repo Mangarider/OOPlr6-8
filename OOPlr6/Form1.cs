@@ -49,13 +49,13 @@ namespace OOPlr6
                 if (st.getObject(i).touched(e.X, e.Y))
                 {
                     st.getObject(i).mark();
-                   // treeView1.Nodes[i].Checked = true;
+                    treeView1.Nodes[i].Checked = true;
                     touch = true;
                 }
                 else if (!ctrl_pressed && !mark_more.Checked)
                 {
                     st.getObject(i).unmark();
-                 //   treeView1.Nodes[i].Checked = false;
+                  treeView1.Nodes[i].Checked = false;
                 }
             }
             if (!touch)
@@ -63,31 +63,31 @@ namespace OOPlr6
                 if (rad_circle.Checked)
                 {
                     st.setObject(new CCircle(e.X, e.Y));
-                 //   treeView1.Nodes.Add("Circle");
+                    treeView1.Nodes.Add("Circle");
                 }
                 else if (rad_square.Checked)
                 {
                     st.setObject(new Square(e.X, e.Y));
-                  //  treeView1.Nodes.Add("Square");
+                    treeView1.Nodes.Add("Square");
                 }
                 else
                 {
                     st.setObject(new Triangle(e.X, e.Y));
-                   // treeView1.Nodes.Add("Triangle");
+                    treeView1.Nodes.Add("Triangle");
 
                 }
-                //treeView1.Nodes[st.countRealObjects() - 1].Checked = true;
+                treeView1.Nodes[st.countRealObjects() - 1].Checked = true;
             }
             this.Refresh();
         }
-        /*private void Form1_Arr_Paint(object sender, PaintEventArgs e)
+        private void Form1_Arr_Paint(object sender, PaintEventArgs e)
         {
             if (st.countRealObjects() > 1)
             {
                 if (ind_a != -1 && ind_b != -1)
                     st.getObject(ind_b).drawArr(g, st.getObject(ind_a).returnX(), st.getObject(ind_a).returnY());
             }
-        }*/
+        }
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (ctrl_enabled.Checked)
@@ -114,7 +114,7 @@ namespace OOPlr6
                     {
 
                         st.deleteObject(i);
-                        //treeView1.Nodes[i].Remove();
+                        treeView1.Nodes[i].Remove();
                         --i;
                     }
                 }
@@ -134,7 +134,7 @@ namespace OOPlr6
 
 
             }
-           /* if (e.KeyCode == Keys.F2)
+           if (e.KeyCode == Keys.F2)
             {
 
                 for (int i = 0; i < st.countRealObjects(); i++)
@@ -145,8 +145,8 @@ namespace OOPlr6
                         break;
                     }
                 }
-            }*/
-           /* if (e.KeyCode == Keys.F3)
+            }
+            if (e.KeyCode == Keys.F3)
             {
 
                 for (int i = 0; i < st.countRealObjects(); i++)
@@ -165,7 +165,7 @@ namespace OOPlr6
 
 
 
-            }*/
+            }
             if (e.KeyCode == Keys.F1)
             {
 
@@ -360,7 +360,7 @@ namespace OOPlr6
                     treeView1.Nodes[i].Checked = true;
                     if (st.getObject(i).returnName() == "Group")
                     {
-                        //treeBuild(treeView1.Nodes[treeView1.Nodes.Count - 1], st.getObject(i));
+                        treeBuild(treeView1.Nodes[treeView1.Nodes.Count - 1], st.getObject(i));
                     }
                 }
                 rd.Close();
@@ -379,7 +379,7 @@ namespace OOPlr6
         {
 
         }
-       /* public void treeBuild(TreeNode tr,  Base i)
+        public void treeBuild(TreeNode tr,  Base i)
         {
                 for (int j = 0; j < ((Group)i).returnSize(); j++)
                 {
@@ -429,13 +429,13 @@ namespace OOPlr6
             {
                 st.getObject(i).unmark();
             }
-            //g.Clear(Form.DefaultBackColor);
+            g.Clear(Form.DefaultBackColor);
             for (int i = 0; i < treeView1.Nodes.Count - 1; i++)
             {
                 treeCh(treeView1);
             }
             Form1_Paint(null, null);
-        }*/
+        }
         private void Form1_SizeChanged(object sender, EventArgs e)
         {
             ;
