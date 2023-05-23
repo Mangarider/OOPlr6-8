@@ -273,7 +273,7 @@ namespace OOPlr6
                     }
                 }
             }
-            /*if (e.KeyCode == Keys.G)
+            if (e.KeyCode == Keys.G)
             {
                 if (st.countRealObjects() > 0)
                 {
@@ -360,11 +360,11 @@ namespace OOPlr6
                     treeView1.Nodes[i].Checked = true;
                     if (st.getObject(i).returnName() == "Group")
                     {
-                        treeBuild(treeView1.Nodes[treeView1.Nodes.Count - 1], st.getObject(i));
+                        //treeBuild(treeView1.Nodes[treeView1.Nodes.Count - 1], st.getObject(i));
                     }
                 }
                 rd.Close();
-            }*/
+            }
             this.Refresh();
         }
         private void Form1_KeyUp(object sender, KeyEventArgs e)
